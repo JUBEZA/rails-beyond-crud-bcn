@@ -6,6 +6,12 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.all
   end
 
+  #GET /restaurants/top
+  def top
+    # SELECT * FROM restaurant WHERE rating = 5
+    @restaurants = Restaurant.where(rating: 5)
+  end
+
   # GET /restaurants/1
   def show
   end
